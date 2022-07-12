@@ -1,0 +1,10 @@
+import telebot
+bot = telebot.TeleBot('5575492053:AAGb_CuE9UuDVtzzqyLCUILjZuGCugtt22k')
+
+@bot.message_handler(commands=["start"])                          #Команда /start
+def start(m):
+    bot.send_message(m.chat.id, "Я на связи. Смогу рассмешить любого своими анекдотами!\nНапиши:\n/help - я помагаю. \nанекдот - высылаю анекдот")
+    
+@bot.message_handler(commands=["help"])                           #Команда /help
+def help(m):
+    bot.send_message(m.chat.id, "Напиши: \nанекдот - высылаю анекдот \n")
